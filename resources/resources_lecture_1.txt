@@ -1,0 +1,12 @@
+https://www.youtube.com/watch?v=vpYct2npKD8&ab_channel=TheTechCave -> URIs, URLs, and URNs | Difference between URI and URL | URL Explained
+https://www.youtube.com/watch?v=KDdfyb2FsOk&ab_channel=gontuseries -? https://www.youtube.com/watch?v=KDdfyb2FsOk&ab_channel=gontuseries
+https://www.youtube.com/watch?v=eesqK59rhGA&ab_channel=TheTechCave -> The Http and the Web | Http Explained | Request-Response Cycle
+https://www.youtube.com/watch?v=uwoD5YsGACg&ab_channel=PowerCertAnimatedVideos -> TCP vs UDP Comparison
+https://www.youtube.com/watch?v=FOZtRzY5x8E&ab_channel=TheTechCave -> APIs | REST | REST APIs Demystified
+https://kruschecompany.com/ssr-or-csr-for-progressive-web-app/  -> src vs csr
+https://dev.to/alain2020/ssr-vs-csr-2617 -> src vs csr (shor version)
+
+
+https://flask.palletsprojects.com/en/2.0.x/  -> flask docs
+https://flask-restful.readthedocs.io/en/latest/   -> flask restful docs
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world -> Flask mega tutorial (template project - only if you are interested, it is not for the course)

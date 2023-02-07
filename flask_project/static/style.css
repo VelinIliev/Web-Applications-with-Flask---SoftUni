@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+h1 {
+    text-align: center;
+    color: gray;
+}
+main p {
+    text-align: center;
+    color: gray;
+    padding: 2rem;
+    margin: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+footer {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+}
+footer p {
+    text-align: center;
+    color: gray;
+    margin: 0;
+    padding: 1rem;
+    background-color: lightgrey;
+}
