@@ -1,0 +1,38 @@
+Why we need a database in the apps:
+
+https://www.youtube.com/watch?v=IVItNKOITxg&ab_channel=CodeWithChris
+https://www.bbc.co.uk/bitesize/guides/z8yg87h/revision/4#:~:text=Databases%20can%20store%20very%20large,they%20take%20up%20little%20space).&text=It%20is%20easy%20to%20add,'date%20first%20registered'%20order.
+https://www.techopedia.com/2/31970/it-business/7-reasons-why-you-need-a-database-management-system
+
+Relational vs non-relation dbs:
+https://www.youtube.com/watch?v=iUtQN8LMEp0&ab_channel=Jelvix
+https://aloa.co/blog/relational-vs-non-relational-database-pros-cons
+
+Relationships:
+https://www.youtube.com/watch?v=f2BfU4Ye4sY&ab_channel=TheCodingInterview
+
+
+Tutorials:
+https://www.w3schools.com/sql/
+https://www.hackerrank.com/domains/sql  (you can sort the challanges by category)
+
+https://www.youtube.com/watch?v=jTiyt6W1Qpo&ab_channel=PrettyPrinted
+https://pythonbasics.org/flask-sqlalchemy/
+
+Further steps - go through the presentation from the additional resources and try to explain it to yourself. Reasearch in the web any question that might appear to you, if you do not find an answer, post it to sli.do or facebook.
+
+
+Please install Postgres before lecture 2
+
+detailed tutorial on how to setup postgres on windows - https://www.guru99.com/download-install-postgresql.html
+same but for linux (ubuntu) - https://www.postgresqltutorial.com/install-postgresql-linux/
+
+Further steps - integrate db with pycharm
+1.	Install Postgres and DB config (from the word documment in the course's page)
+
+
+Extra step:
+If you want you can try follow the word document and see how far you can get
+
+
+
