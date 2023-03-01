@@ -1,0 +1,37 @@
+SQLAlchemy, Postgres, and Migrations in Flask
+
+    I. Създаваане на Flask с postgresql
+
+        1. Инсталиране на postgresql
+        2. Създаване на нов flask project с активирана venv
+        3. инсталиране на flask от терминала (pip install flask)
+        4. конфигуриране на базата данни:
+            app.config['SQLALCHEMY_DATABASE_URI'] =
+            f'postgresql://{db_user}:{db_password}@localhost:{db_port}/{db_name}'
+        5. инсталиране на flask-restful, flask_sqlalchemy и psycopg2:
+            pip install flask-restful flask_sqlalchemy psycopg2-binary
+
+    II. Миграции
+        1. инсталиране на Flask-Migrate = 2.5.2
+            pip install Flask-Migrate==2.5.2
+        2. from flask_migrate import Migrate
+        3. migrate = Migrate(app, db)
+        4. от терминала инициализраме базата дани:
+            flask db init
+            (ако даде грешка: Could not locate a Flask application.
+            set FLASK_APP = {името на апп-а}, за мак вместо set - execute)
+        5. създаване на миграция
+            flask db migrate -m "{коментар}"
+        6. потвърждаване на промените:
+            flask db upgrade
+           или отказване на промените:
+            flask db downgrade
+
+    III. Relations
+        1. Many to many junction table
+
+    IV. .env -> credentials
+        за четене pip install python-decouple
+        from decouple import config
+
+    V. pip freeze > requirements.txt
