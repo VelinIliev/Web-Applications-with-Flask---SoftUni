@@ -1,0 +1,11 @@
+Schemas, Validation, and Password Hashing
+    I. Schemas
+        marshmallow schemas: pip install marshmallow
+        pip install marshmallow_enum
+
+    II. Validation
+        email-validator (pip install email-validator)
+        zxcvbn-python или
+        password_strength (pip install password_strength)
+    III. Hashing
+           from werkzeug.security import generate_password_hash

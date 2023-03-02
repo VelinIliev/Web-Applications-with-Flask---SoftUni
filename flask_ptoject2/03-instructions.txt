@@ -28,10 +28,11 @@ SQLAlchemy, Postgres, and Migrations in Flask
             flask db downgrade
 
     III. Relations
-        1. Many to many junction table
+        1. Many-to-many junction table
 
     IV. .env -> credentials
         за четене pip install python-decouple
         from decouple import config
 
     V. pip freeze > requirements.txt
+        install: pip -r requirements.txt
