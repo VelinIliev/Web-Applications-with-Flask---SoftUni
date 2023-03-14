@@ -2,18 +2,18 @@ import enum
 from datetime import datetime, timedelta
 
 import jwt
-from jwt import DecodeError, InvalidSignatureError
 from decouple import config
 from flask import Flask, request
 from flask_httpauth import HTTPTokenAuth
 from flask_migrate import Migrate
 from flask_restful import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
+from jwt import DecodeError, InvalidSignatureError
 from marshmallow import Schema, fields, validate, ValidationError
 from marshmallow_enum import EnumField
 from password_strength import PasswordPolicy
-from werkzeug.security import generate_password_hash
 from werkzeug.exceptions import BadRequest, InternalServerError, Forbidden
+from werkzeug.security import generate_password_hash
 
 app = Flask(__name__)
 
@@ -32,12 +32,26 @@ migrate = Migrate(app, db)
 auth = HTTPTokenAuth(scheme='Bearer')
 
 
-def permission_required(permission_needed):
+# authentication decorator
+def permission_required(permissions_needed):
     def decorated_func(func):
         def wrapper(*args, **kwargs):
-            if auth.current_user().role == permission_needed():
-                return
+            if auth.current_user().role in permissions_needed:
+                return func(*args, **kwargs)
             raise Forbidden("You have permission to access this resource")
+        return wrapper
+    return decorated_func
+
+
+def validate_schema(schema_name):
+    def decorated_func(func):
+        def wrapper(*args, **kwargs):
+            data = request.get_json()
+            schema = schema_name()
+            errors = schema.validate(data)
+            if not errors:
+                return func(*args, **kwargs)
+            raise BadRequest(errors)
         return wrapper
     return decorated_func
 
@@ -210,24 +224,19 @@ class SingleClothSchemaOut(SingleClothSchemaBase):
 
 
 class UserRegisterResource(Resource):
+    @validate_schema(UserSignInSchema)
     def post(self):
         data = request.get_json()
-        current_user = auth.current_user()
-        schema = UserSignInSchema()
-        errors = schema.validate(data)
-        if not errors:
-            # hashing password
-            data['password'] = generate_password_hash(data['password'], 'sha256')
-            user = User(**data)
-            db.session.add(user)
-            db.session.commit()
-            return {"token": user.encode_token()}
-        return errors
+        data['password'] = generate_password_hash(data['password'], 'sha256')
+        user = User(**data)
+        db.session.add(user)
+        db.session.commit()
+        return {"token": user.encode_token()}
 
 
- class ClothesResource(Resource):
+class ClothesResource(Resource):
     @auth.login_required
-    @permission_required(UserRolesEnum.admin)
+    @permission_required([UserRolesEnum.user, UserRolesEnum.admin, UserRolesEnum.super_admin])
     def post(self):
         data = request.get_json()
         schema = SingleClothSchemaIn()
