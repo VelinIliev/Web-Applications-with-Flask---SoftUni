@@ -1,0 +1,7 @@
+I. Create Flask project
+    1. create db with flask_sqlalchemy
+    2. for migrations flask_migrate
+    3. for reading from .env file - pip install python-decouple
+    4. install psycopg2-binary
+    5. pip install Flask-RESTful - for Resources
+    6. pip install marshmallow  - for schemas
