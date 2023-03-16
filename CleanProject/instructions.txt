@@ -5,3 +5,5 @@ I. Create Flask project
     4. install psycopg2-binary
     5. pip install Flask-RESTful - for Resources
     6. pip install marshmallow  - for schemas
+    7. pip install PyJWT - for tokens
+    8. pip install Flask-HTTPAuth - for authentications

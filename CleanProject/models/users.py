@@ -1,4 +1,4 @@
-from app import db
+from db import db
 from models.enums import RoleType
 
 
